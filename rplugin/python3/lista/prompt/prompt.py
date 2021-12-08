@@ -152,9 +152,8 @@ class Prompt:
             build_echon_expr(selected_text, self.highlight_caret),
             build_echon_expr(forward_text, self.highlight_text),
         ]))
-        if self.is_macvim:
-            # MacVim requires extra 'redraw'
-            self.nvim.command('redraw')
+
+        self.nvim.command('redraw')
 
     def start(self):
         """Start prompt and return value.
